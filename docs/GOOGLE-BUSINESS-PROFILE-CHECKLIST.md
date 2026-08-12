@@ -23,8 +23,8 @@ for you.
       `src/lib/site-config.ts` (`secondaryServiceAreas`)
 - [ ] Phone number: (519) 242-5757 — must match the website exactly
 - [ ] Website URL: this site's production URL
-- [ ] Hours: only publish once real hours are confirmed
-      (`src/lib/site-config.ts`, currently a placeholder)
+- [ ] Hours: Monday–Friday, 9:00 AM–5:00 PM Eastern (confirmed, see
+      `src/lib/site-config.ts`) — keep in sync if hours ever change
 - [ ] Business description: keep it factual and consistent with the
       website copy — no invented claims, no "#1", no fake years-in-business
 

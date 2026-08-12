@@ -60,10 +60,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h2 className="text-lg font-semibold text-charcoal">Business hours</h2>
-              <AdminNote
-                note="Business hours have not been confirmed."
-                fallback={<p className="mt-1 text-charcoal-soft">{siteConfig.hoursDisplay}</p>}
-              />
+              <p className="mt-1 text-charcoal-soft">{siteConfig.hoursDisplay}</p>
             </div>
             <div>
               <h2 className="flex items-center gap-2 text-lg font-semibold text-charcoal">

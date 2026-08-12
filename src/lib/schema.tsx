@@ -4,11 +4,12 @@ import { siteConfig } from "./site-config";
  * JSON-LD structured data builders.
  *
  * These describe the business and its services to search engines.
- * Fields sourced from placeholder data in site-config.ts (e.g. hours,
+ * Fields sourced from placeholder data in site-config.ts (e.g. a real
  * street address) are deliberately omitted here rather than emitted
  * with fake values — structured data with invented facts (address,
  * hours, ratings) can trigger search-console/manual-action penalties
- * and, more simply, would be false. Add them once confirmed.
+ * and, more simply, would be false. Add them once confirmed. (Hours
+ * are now confirmed — see openingHoursSpecification below.)
  */
 
 const AREAS_SERVED = [siteConfig.primaryCity, ...siteConfig.secondaryServiceAreas].map(
@@ -35,6 +36,14 @@ export function localBusinessSchema() {
       addressRegion: siteConfig.primaryRegionShort,
       addressCountry: "CA",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    ],
   };
 
   return schema;

@@ -18,7 +18,7 @@ settings/secrets, never committed). This doc explains every field.
 | `primaryCity` / `primaryRegion` | ✅ Confirmed | St. Catharines, Ontario |
 | `streetAddress` / `postalCode` | ❌ Placeholder | Not supplied. Also see `showStreetAddressPublicly` — a home-based business may reasonably choose never to publish this |
 | `secondaryServiceAreas` | ✅ Confirmed | From the project brief; presented as "contact to confirm," not guaranteed coverage |
-| `hours` / `hoursDisplay` | ❌ Placeholder | Do not invent hours — leave the friendly fallback copy until real hours are confirmed |
+| `hours` / `hoursDisplay` | ✅ Confirmed | Monday–Friday, 9:00 AM–5:00 PM (Eastern Time). Also reflected in `src/lib/schema.tsx` (`openingHoursSpecification`) |
 | `social.*` | ❌ Placeholder | No social profiles supplied |
 | `bookingUrl` | ❌ Placeholder | Only relevant if a scheduling tool is adopted later |
 | `businessNumber` / `hstNumber` / `isHstRegistered` | ❌ Placeholder | See CRA section of the launch checklist |

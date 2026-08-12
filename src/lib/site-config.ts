@@ -88,10 +88,11 @@ export const siteConfig = {
     "Serving St. Catharines and surrounding Niagara communities — contact us to confirm service availability in your area.",
 
   // ---------------------------------------------------------------
-  // Hours — not supplied. Do not invent hours.
+  // Hours — confirmed.
   // ---------------------------------------------------------------
-  hours: NEEDS_OWNER_INPUT,
-  hoursDisplay: "Call or send a photo any time — M.S. will get back to you.",
+  hours: "Monday–Friday, 9:00 AM–5:00 PM (Eastern Time)",
+  hoursDisplay:
+    "Monday–Friday, 9:00 AM–5:00 PM (Eastern Time). Send a photo any time — M.S. will follow up during business hours.",
 
   // ---------------------------------------------------------------
   // Social / profiles — none supplied

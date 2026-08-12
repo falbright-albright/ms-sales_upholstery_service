@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify (site-link state, not something to commit)
+.netlify
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
