@@ -11,26 +11,26 @@ import SubmitButton from "@/components/ui/SubmitButton";
  * FREE ESTIMATE / QUOTE FORM — Netlify Forms integration.
  * ------------------------------------------------------------------
  * How this connects to Netlify:
- * 1. The <form> below carries `data-netlify="true"` and a stable
- *    `name="quote-request"`. Because this page is statically
- *    generated at build time, Netlify's deploy-time HTML scan finds
- *    this exact form markup and provisions a matching form endpoint
- *    automatically — no server code required for the "Netlify Forms"
- *    approach chosen for this build.
- * 2. `data-netlify-honeypot="bot-field"` plus the hidden `bot-field`
- *    input is Netlify's built-in spam trap: bots that fill in every
- *    field get silently rejected.
- * 3. Submission happens via fetch() so we can show an in-page
- *    confirmation without a full page reload, while the `action`/
- *    `method`/`encType` attributes keep the form working even if
- *    JavaScript fails to load (progressive enhancement).
+ * 1. This project uses @netlify/plugin-nextjs v5 (the OpenNext-based
+ *    Next.js runtime). That runtime doesn't emit the kind of plain,
+ *    crawlable HTML Netlify's deploy-time form scanner needs, so form
+ *    detection instead comes from /public/__forms.html — a static
+ *    snapshot listing this form's name and every field. The `<form>`
+ *    below is NOT scanned directly (its `name` here is just for
+ *    React/accessibility) — see __forms.html for the source of truth
+ *    Netlify actually reads, and https://opennext.js.org/netlify/forms
+ *    for why.
+ * 2. The hidden `bot-field` input is a honeypot: real visitors never
+ *    fill it in (hidden via CSS, not `display:none`, so it's still
+ *    reachable by naive bots), and Netlify's spam filter — configured
+ *    via `data-netlify-honeypot` on the form in __forms.html — rejects
+ *    submissions where it's filled. We also check it client-side below
+ *    as a first pass.
+ * 3. Submission happens via fetch() to `/__forms.html` (not this page)
+ *    so Netlify's static-asset path actually catches it, while still
+ *    showing an in-page confirmation instead of a full reload.
  * 4. File inputs are submitted as multipart/form-data so Netlify
  *    captures photo attachments with the submission.
- *
- * IMPORTANT: keep this form's full markup present in the page's
- * initial server-rendered HTML (i.e. don't lazy-mount it behind a
- * client-only condition) — Netlify's form detector only sees what's
- * in the static HTML output at deploy time.
  */
 export default function QuoteForm() {
   const router = useRouter();
@@ -87,7 +87,7 @@ export default function QuoteForm() {
 
     setSubmitting(true);
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         body: data,
       });
@@ -107,14 +107,12 @@ export default function QuoteForm() {
       name="quote-request"
       method="POST"
       encType="multipart/form-data"
-      action="/free-estimate/success"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      action="/__forms.html"
       onSubmit={handleSubmit}
       className="space-y-6"
       noValidate
     >
-      {/* Required for Netlify's static form detection / AJAX submission */}
+      {/* Must match the form-name declared in public/__forms.html */}
       <input type="hidden" name="form-name" value="quote-request" />
       {/* Honeypot field — hidden from real visitors via CSS, left in the tab order for none */}
       <p className="hidden">

@@ -1,0 +1,46 @@
+<html>
+  <head></head>
+  <body>
+    <!--
+      Netlify Forms detection snapshot — required by @netlify/plugin-nextjs v5
+      (the OpenNext-based Next.js runtime). Modern Next.js output doesn't give
+      Netlify's deploy-time HTML scanner plain crawlable markup to find forms
+      in, so this static file exists purely to declare each form name and its
+      fields for detection. No one ever sees this page — the real forms live
+      in QuoteForm.tsx and ContactForm.tsx, and submit here via fetch() rather
+      than to the page they're rendered on. Field lists below must be kept in
+      sync with those two components.
+
+      See: https://opennext.js.org/netlify/forms
+    -->
+    <form name="quote-request" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="quote-request" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="contact-method" type="text" />
+      <input name="project-type" type="text" />
+      <input name="piece-count" type="number" />
+      <input name="furniture-type" type="text" />
+      <textarea name="description"></textarea>
+      <input name="material-preference" type="text" />
+      <input name="city" type="text" />
+      <input name="postal-code" type="text" />
+      <input name="photos" type="file" multiple />
+      <textarea name="additional-info"></textarea>
+      <input name="marketing-consent" type="checkbox" />
+    </form>
+
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="inquiry-type" type="text" />
+      <textarea name="message"></textarea>
+      <input name="marketing-consent" type="checkbox" />
+    </form>
+  </body>
+</html>

@@ -83,10 +83,17 @@ permission to publish.
 
 The **Free Estimate** form (`/free-estimate`) and the **Contact** form
 (`/contact`) both use [Netlify Forms](https://docs.netlify.com/forms/setup/)
-— no custom backend or database required. Netlify detects the two forms
-(`quote-request` and `contact`) automatically from the static HTML this site
-prerenders at build time, including the multi-photo upload field on the
-estimate form.
+— no custom backend or database required. This project runs on
+`@netlify/plugin-nextjs` v5 (the OpenNext-based Next.js runtime), which
+doesn't give Netlify's deploy-time scanner plain crawlable HTML to detect
+forms in — so detection instead comes from a static snapshot file,
+[`public/__forms.html`](public/__forms.html), that declares both forms
+(`quote-request` and `contact`) and every field, including the multi-photo
+upload field on the estimate form. The real forms (in `QuoteForm.tsx` /
+`ContactForm.tsx`) submit to `/__forms.html` via `fetch()` rather than to
+the page they're rendered on. See
+[opennext.js.org/netlify/forms](https://opennext.js.org/netlify/forms) for
+why, and keep `__forms.html`'s field list in sync if either form changes.
 
 After the first deploy:
 
@@ -98,10 +105,6 @@ After the first deploy:
    dashboard.
 3. Review Netlify's built-in spam filtering settings; the forms also ship
    with a honeypot field (`bot-field`) as a first line of defense.
-
-See `src/components/forms/QuoteForm.tsx` for implementation notes,
-including why the form must stay statically rendered for Netlify's
-form-detection to keep working.
 
 ## Deployment (Netlify)
 
@@ -120,8 +123,10 @@ canonical URLs, `sitemap.xml`, and social-preview metadata.
 ## Tech notes
 
 - **Framework:** Next.js App Router, static generation by default (no
-  server-side data fetching on any page) — required for Netlify Forms
-  detection to work, so avoid switching pages to `force-dynamic`.
+  server-side data fetching on any page). Netlify Forms detection no
+  longer depends on this (see "Forms & leads" above — it reads
+  `public/__forms.html` instead), but static generation is still the
+  right default for a marketing/content site like this one.
 - **Styling:** Tailwind CSS v4, custom design tokens in
   `src/app/globals.css` (warm cream/charcoal/brown/tan/brass palette).
 - **Structured data:** `src/lib/schema.tsx` builds LocalBusiness, Service,

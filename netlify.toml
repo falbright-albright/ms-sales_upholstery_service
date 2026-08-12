@@ -27,9 +27,11 @@
 # ---------------------------------------------------------------------------
 # Netlify Forms
 # ---------------------------------------------------------------------------
-# No redirects/functions needed here: the "quote-request" and "contact"
-# forms are detected automatically at deploy time from the static HTML
-# Next.js prerenders for /free-estimate and /contact (see QuoteForm.tsx and
-# ContactForm.tsx for the detection requirements). Submissions appear under
-# Site configuration → Forms in the Netlify dashboard; set up email
-# notifications there so M.S. is alerted for every new lead.
+# @netlify/plugin-nextjs v5 (OpenNext-based) doesn't give Netlify's deploy-time
+# scanner plain crawlable HTML, so the "quote-request" and "contact" forms are
+# detected via the static snapshot at public/__forms.html instead (see that
+# file, plus QuoteForm.tsx/ContactForm.tsx, and
+# https://opennext.js.org/netlify/forms). No redirects/functions needed beyond
+# that file. Submissions appear under Site configuration → Forms in the
+# Netlify dashboard; set up email notifications there so M.S. is alerted for
+# every new lead.

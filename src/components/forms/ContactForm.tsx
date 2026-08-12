@@ -8,8 +8,9 @@ import SubmitButton from "@/components/ui/SubmitButton";
 /**
  * General contact form (separate Netlify Forms endpoint, name="contact")
  * for visitors who want to ask a question rather than submit a full
- * project quote request. See QuoteForm.tsx for detailed notes on how
- * the Netlify Forms wiring works.
+ * project quote request. See QuoteForm.tsx and public/__forms.html for
+ * detailed notes on how the Netlify Forms wiring works with the
+ * OpenNext-based Next.js runtime.
  */
 export default function ContactForm() {
   const router = useRouter();
@@ -61,7 +62,7 @@ export default function ContactForm() {
       const plainEntries = Object.fromEntries(
         Array.from(data.entries()).map(([key, value]) => [key, String(value)])
       );
-      const res = await fetch("/", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(plainEntries).toString(),
@@ -81,13 +82,12 @@ export default function ContactForm() {
       ref={formRef}
       name="contact"
       method="POST"
-      action="/free-estimate/success"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      action="/__forms.html"
       onSubmit={handleSubmit}
       className="space-y-5"
       noValidate
     >
+      {/* Must match the form-name declared in public/__forms.html */}
       <input type="hidden" name="form-name" value="contact" />
       <p className="hidden">
         <label>
