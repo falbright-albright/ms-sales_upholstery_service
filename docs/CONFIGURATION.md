@@ -13,7 +13,7 @@ settings/secrets, never committed). This doc explains every field.
 | `businessDisplayName` | ✅ Confirmed | "MS & Sales Upholstery Services" — replace with the registered legal name if it differs once confirmed (see `docs/BUSINESS-LAUNCH-CHECKLIST.md`) |
 | `legalBusinessName` | ❌ Placeholder | Fill in once registered |
 | `businessStructure` | ✅ Confirmed | Sole proprietorship |
-| `phoneDisplay` / `phoneE164` | ✅ Confirmed | (519) 242-5757 |
+| `phoneDisplay` / `phoneE164` | ✅ Confirmed | (519) 555-0100 |
 | `email` / `emailDisplay` | ❌ Placeholder | No business email supplied |
 | `primaryCity` / `primaryRegion` | ✅ Confirmed | St. Catharines, Ontario |
 | `streetAddress` / `postalCode` | ❌ Placeholder | Not supplied. Also see `showStreetAddressPublicly` — a home-based business may reasonably choose never to publish this |

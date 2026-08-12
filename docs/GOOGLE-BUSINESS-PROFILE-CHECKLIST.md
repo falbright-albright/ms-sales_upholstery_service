@@ -21,7 +21,7 @@ for you.
 - [ ] Service area: set to St. Catharines plus the secondary Niagara
       communities actually served — keep this consistent with
       `src/lib/site-config.ts` (`secondaryServiceAreas`)
-- [ ] Phone number: (519) 242-5757 — must match the website exactly
+- [ ] Phone number: (519) 555-0100 — must match the website exactly
 - [ ] Website URL: this site's production URL
 - [ ] Hours: Monday–Friday, 9:00 AM–5:00 PM Eastern (confirmed, see
       `src/lib/site-config.ts`) — keep in sync if hours ever change

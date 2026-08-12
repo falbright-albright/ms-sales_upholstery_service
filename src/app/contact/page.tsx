@@ -13,7 +13,7 @@ import { PhoneIcon, MapPinIcon } from "@/components/ui/Icons";
 export const metadata: Metadata = pageMetadata({
   title: "Contact M.S.",
   description:
-    "Contact M.S. for furniture upholstery, repair and reupholstery in St. Catharines, Ontario. Call (519) 242-5757 or send a message.",
+    "Contact M.S. for furniture upholstery, repair and reupholstery in St. Catharines, Ontario. Call (519) 555-0100 or send a message.",
   path: "/contact",
 });
 

@@ -17,7 +17,7 @@ const steps = [
   {
     n: "01",
     title: "Contact Us",
-    body: "Call M.S. at (519) 242-5757 or submit the free estimate form. Either way, tell us a bit about the piece and what's wrong with it.",
+    body: "Call M.S. at (519) 555-0100 or submit the free estimate form. Either way, tell us a bit about the piece and what's wrong with it.",
   },
   {
     n: "02",

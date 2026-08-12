@@ -47,8 +47,15 @@ export const siteConfig = {
   // ---------------------------------------------------------------
   // Contact
   // ---------------------------------------------------------------
-  phoneDisplay: "(519) 242-5757",
-  phoneE164: "+15192425757",
+  /**
+   * PLACEHOLDER — not a working number. Uses the North American 555-0100
+   * to 555-0199 block, which is reserved for fictional use and never
+   * assigned to a real subscriber, specifically so this can't misroute a
+   * call to an unrelated real person. Replace with the confirmed business
+   * number before relying on any click-to-call CTA on the site.
+   */
+  phoneDisplay: "(519) 555-0100",
+  phoneE164: "+15195550100",
   /** No business email has been supplied. Placeholder only. */
   email: NEEDS_OWNER_INPUT,
   emailDisplay: "Email — coming soon",
@@ -117,7 +124,7 @@ export const siteConfig = {
   // ---------------------------------------------------------------
   privacyContactName: "M.S.",
   privacyContactMethod:
-    "By phone at (519) 242-5757. A dedicated privacy email address will be added here once one is set up.",
+    "By phone at (519) 555-0100. A dedicated privacy email address will be added here once one is set up.",
 
   // ---------------------------------------------------------------
   // Analytics & tracking — read from environment variables so no

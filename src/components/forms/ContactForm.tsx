@@ -71,7 +71,7 @@ export default function ContactForm() {
       router.push("/free-estimate/success");
     } catch {
       setFormError(
-        "Something went wrong sending your message. Please try again, or call M.S. directly at (519) 242-5757."
+        "Something went wrong sending your message. Please try again, or call M.S. directly at (519) 555-0100."
       );
       setSubmitting(false);
     }
