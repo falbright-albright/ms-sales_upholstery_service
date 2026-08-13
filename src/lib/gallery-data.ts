@@ -118,13 +118,9 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/gallery/residential-chaise-tan-fabric.jpg",
     alt: "Residential armchair and chaise reupholstered in tan fabric",
   },
-  {
-    id: "workshop-vinyl-cushion-detail",
-    title: "Custom-fit seat cushion — vinyl",
-    categories: ["Vinyl", "Repairs"],
-    image: "/images/gallery/workshop-vinyl-cushion-detail.jpg",
-    alt: "Close-up of a finished tan vinyl seat cushion with channel stitching, on the workshop bench",
-  },
+  // "workshop-vinyl-cushion-detail" intentionally not listed here — it's
+  // already shown on the home page (Hero and MaterialsOverview) and on
+  // /about, so it's dropped from the gallery to avoid a duplicate.
   {
     id: "vehicle-seat-vinyl-repair",
     title: "Other upholstery work — vehicle seat",
@@ -146,12 +142,69 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/gallery/marine-seating-installed.jpg",
     alt: "The same reupholstered pontoon boat seating installed on the boat",
   },
-  // Categories/piece types not yet backed by a real photo — kept as
-  // clearly-labelled placeholders rather than dropped, so the filter
-  // list still reflects the range of residential work we take on.
-  { id: "single-dining-chair", title: "Single dining chair", categories: ["Dining Chairs"] },
-  { id: "accent-chair", title: "Accent chair", categories: ["Armchairs", "Chairs"] },
-  { id: "sectional-sofa", title: "Sectional sofa", categories: ["Sofas"] },
+  {
+    id: "restaurant-booth-blue-vinyl-pattern-corner",
+    title: "Restaurant booth corner — blue vinyl & patterned fabric",
+    categories: ["Restaurant Seating", "Vinyl", "Fabric"],
+    image: "/images/gallery/restaurant-booth-blue-vinyl-pattern-corner.jpg",
+    alt: "Corner restaurant booth with a blue vinyl seat and a multicolour patterned fabric backrest, viewed from behind",
+  },
+  {
+    id: "restaurant-corner-booth-dark-brown",
+    title: "Restaurant corner booth — dark brown vinyl",
+    categories: ["Restaurant Seating", "Vinyl"],
+    image: "/images/gallery/restaurant-corner-booth-dark-brown.jpg",
+    alt: "Two-seat corner restaurant booth reupholstered in dark brown vinyl beside a rustic wood table",
+  },
+  {
+    id: "workshop-dining-chair-pale-yellow-vinyl",
+    title: "Dining chair — pale yellow vinyl (workshop)",
+    categories: ["Dining Chairs", "Vinyl"],
+    image: "/images/gallery/workshop-dining-chair-pale-yellow-vinyl.jpg",
+    alt: "Armless dining chair reupholstered in pale yellow vinyl, photographed in the workshop",
+  },
+  {
+    id: "restaurant-booth-red-tufted-vinyl",
+    title: "Restaurant booth — red tufted vinyl",
+    categories: ["Restaurant Seating", "Vinyl"],
+    image: "/images/gallery/restaurant-booth-red-tufted-vinyl.jpg",
+    alt: "Restaurant banquette booth reupholstered in red button-tufted vinyl",
+  },
+  {
+    id: "workshop-dining-chairs-cream-vinyl",
+    title: "Dining chairs — cream vinyl (workshop)",
+    categories: ["Dining Chairs", "Vinyl"],
+    image: "/images/gallery/workshop-dining-chairs-cream-vinyl.jpg",
+    alt: "Pair of dining chairs with oval cutout backs, reupholstered in cream vinyl, photographed in the workshop",
+  },
+  {
+    id: "workshop-recliner-armchair-cream",
+    title: "Recliner armchair — cream vinyl (workshop)",
+    categories: ["Armchairs", "Vinyl"],
+    image: "/images/gallery/workshop-recliner-armchair-cream.jpg",
+    alt: "Reclining armchair reupholstered in cream leather-look vinyl, photographed in the workshop",
+  },
+  {
+    id: "restaurant-corner-booth-tan-brown-vinyl",
+    title: "Restaurant corner booth — tan & brown vinyl",
+    categories: ["Restaurant Seating", "Vinyl"],
+    image: "/images/gallery/restaurant-corner-booth-tan-brown-vinyl.jpg",
+    alt: "Wide corner restaurant booth reupholstered in tan and brown vinyl, shown in a bar dining area",
+  },
+  {
+    id: "pub-green-booth-and-dining-chairs",
+    title: "Pub booth seating & dining chairs",
+    categories: ["Restaurant Seating", "Chairs", "Vinyl"],
+    image: "/images/gallery/pub-green-booth-and-dining-chairs.jpg",
+    alt: "Green vinyl booth seating along a pub wall next to wood dining chairs with nailhead-trim seats",
+  },
+  {
+    id: "workshop-green-tufted-booth",
+    title: "Restaurant booth — green channel-tufted vinyl (workshop)",
+    categories: ["Restaurant Seating", "Vinyl"],
+    image: "/images/gallery/workshop-green-tufted-booth.jpg",
+    alt: "Completed restaurant booth bench with channel-tufted green vinyl, photographed in the workshop before installation",
+  },
 ];
 
 /**

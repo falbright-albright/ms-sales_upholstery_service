@@ -60,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en-CA"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-cream text-charcoal">
         <a

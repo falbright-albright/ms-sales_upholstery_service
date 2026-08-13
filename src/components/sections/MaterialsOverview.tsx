@@ -11,7 +11,11 @@ interface Swatch {
 }
 
 const swatches: Swatch[] = [
-  { label: "Neutral tones" },
+  {
+    label: "Channel-tufted vinyl",
+    src: "/images/gallery/workshop-green-tufted-booth.jpg",
+    alt: "Green vinyl booth back with vertical channel tufting, photographed in the workshop",
+  },
   {
     label: "Warm fabric texture",
     src: "/images/gallery/residential-chaise-tan-fabric.jpg",
@@ -27,7 +31,11 @@ const swatches: Swatch[] = [
     src: "/images/gallery/workshop-vinyl-cushion-detail.jpg",
     alt: "Solid tan vinyl seat cushion with channel stitching",
   },
-  { label: "Textured vinyl" },
+  {
+    label: "Button-tufted vinyl",
+    src: "/images/gallery/restaurant-booth-red-tufted-vinyl.jpg",
+    alt: "Red vinyl banquette seating with diamond button-tufting",
+  },
 ];
 
 export default function MaterialsOverview() {
